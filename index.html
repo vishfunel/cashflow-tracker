@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cashflow Tracker</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      import App from './src/App.jsx';
+      import './src/index.css';
+
+      // These will be set by Vercel's Environment Variables
+      window.__firebase_config = import.meta.env.VITE_FIREBASE_CONFIG;
+      window.__app_id = import.meta.env.VITE_APP_ID || 'default-app-id';
+      window.__initial_auth_token = import.meta.env.VITE_INITIAL_AUTH_TOKEN;
+
+      ReactDOM.createRoot(document.getElementById('root')).render(
+        React.createElement(App)
+      );
+    </script>
+  </body>
+</html>
